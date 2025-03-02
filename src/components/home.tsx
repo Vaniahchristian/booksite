@@ -125,7 +125,7 @@ function Home() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-4xl mb-8">About the Author</h2>
           <p className="text-lg leading-relaxed mb-6">
-            Your Name is a USA Today Bestselling Author of fantasy romance novels that blend magic,
+            Tendo Vanessa is a UGANDAS Today Bestselling Author of fantasy romance novels that blend magic,
             passion, and adventure. With a love for crafting immersive worlds and unforgettable characters,
             she brings stories to life that capture readers' hearts and imaginations.
           </p>
@@ -142,8 +142,8 @@ function Home() {
           <h2 className="text-4xl mb-8">Get in Touch</h2>
           <p className="text-lg mb-12">
             For business inquiries, please contact: <br />
-            <a href="mailto:contact@yourname.com" className="text-[#1a1a1a] hover:text-[#666] underline">
-              contact@yourname.com
+            <a href="mailto:contact@TendoVanessa.com" className="text-[#1a1a1a] hover:text-[#666] underline">
+              contact@TendoVanessa.com
             </a>
           </p>
           <div className="flex justify-center space-x-8">
@@ -163,7 +163,7 @@ function Home() {
       {/* Footer */}
       <footer className="py-12 text-center text-sm">
         <div className="container mx-auto px-4">
-          <p> 2025 Your Name. All Rights Reserved.</p>
+          <p> 2025 Tendo Vanessa. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
