@@ -1,64 +1,95 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart, User, Search } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "#about" },
-    { label: "Books", href: "#books" },
-    { label: "Reading Order", href: "#reading-order" },
-    { label: "Newsletter", href: "#newsletter" },
-    { label: "Contact", href: "#contact" },
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about" },
+    { label: "BOOKS", href: "/books", hasSubmenu: true },
+    { label: "SHOP", href: "/shop", hasSubmenu: true },
+    { label: "EVENTS", href: "/events" },
+    { label: "PATREON", href: "/patreon" },
+    { label: "EXTRA", href: "/extra", hasSubmenu: true },
+    { label: "CONTACT", href: "/contact" },
+    { label: "NEWSLETTER", href: "/newsletter" },
   ];
 
   return (
-    <nav className="w-full h-20 bg-[#f9f5f0] fixed top-0 left-0 z-50 font-serif">
+    <nav className="w-full h-16 bg-black/95 backdrop-blur-sm fixed top-0 left-0 z-50 font-sans border-b border-gray-800">
       <div className="container mx-auto h-full px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="text-2xl text-[#1a1a1a]">
-          Your Name
-        </Link>
-
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           {links.map((link, index) => (
             <Link
               key={index}
               to={link.href}
-              className="text-[#1a1a1a] hover:text-[#666] transition-colors"
+              className="text-white/90 hover:text-white transition-colors text-xs tracking-widest"
             >
               {link.label}
+              {link.hasSubmenu && (
+                <span className="ml-1 inline-block transform rotate-90">›</span>
+              )}
             </Link>
           ))}
         </div>
 
+        {/* Right Side Icons */}
+        <div className="hidden lg:flex items-center space-x-4">
+          <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+            <Search className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+            <ShoppingCart className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+            <User className="h-4 w-4" />
+          </Button>
+        </div>
+
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-[#1a1a1a]"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        <div className="lg:hidden flex items-center justify-between w-full">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-white/90 hover:text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+
+          <div className="flex items-center space-x-4">
+            <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+              <Search className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+              <ShoppingCart className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-white/90 hover:text-white">
+              <User className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-[#f9f5f0] border-t border-[#1a1a1a]/10">
+        <div className="lg:hidden absolute top-16 left-0 w-full bg-black/95 backdrop-blur-sm border-t border-gray-800">
           <div className="container mx-auto px-4 py-4">
             {links.map((link, index) => (
               <Link
                 key={index}
                 to={link.href}
-                className="block py-3 text-[#1a1a1a] hover:text-[#666] transition-colors"
+                className="block py-3 text-white/90 hover:text-white transition-colors text-xs tracking-widest"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
+                {link.hasSubmenu && (
+                  <span className="ml-1 inline-block transform rotate-90">›</span>
+                )}
               </Link>
             ))}
           </div>

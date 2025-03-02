@@ -6,12 +6,12 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#f9f5f0] text-[#1a1a1a] font-serif">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-32 mt-20 text-center">
-        <h1 className="text-6xl font-bold mb-6">Your Name</h1>
+        <h1 className="text-6xl font-bold mb-6">Tendo Vanessa</h1>
         <p className="text-2xl italic mb-8">
-          USA Today Bestselling Author of Fantasy Romance
+          UG Today Bestselling Author of Fantasy Romance
         </p>
         <div className="flex justify-center space-x-6">
           <Button className="bg-[#1a1a1a] text-white hover:bg-[#333] text-lg px-8 py-6 rounded-none">
@@ -125,8 +125,8 @@ function Home() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-4xl mb-8">About the Author</h2>
           <p className="text-lg leading-relaxed mb-6">
-            Your Name is a USA Today Bestselling Author of fantasy romance novels that blend magic, 
-            passion, and adventure. With a love for crafting immersive worlds and unforgettable characters, 
+            Your Name is a USA Today Bestselling Author of fantasy romance novels that blend magic,
+            passion, and adventure. With a love for crafting immersive worlds and unforgettable characters,
             she brings stories to life that capture readers' hearts and imaginations.
           </p>
           <p className="text-lg leading-relaxed">
