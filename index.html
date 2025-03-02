@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self';
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' 'inline-speculation-rules' 
+                             chrome-extension://9b9c72c8-ee85-47b7-af7e-1b01e9dbe719/ 
+                             chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/;
+                   style-src 'self' 'unsafe-inline';
+                   connect-src 'self' *;
+                   img-src 'self' data: https:;
+                   font-src 'self' data:;" />
     <title>Vite + React + TS</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script src="https://api.tempolabs.ai/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js"></script>
   </body>
 </html>
